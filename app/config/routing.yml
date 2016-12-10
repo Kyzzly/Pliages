@@ -1,0 +1,4 @@
+pliage:
+    resource: "@PliageBundle/Resources/config/routing.yml"
+    prefix:   /
+

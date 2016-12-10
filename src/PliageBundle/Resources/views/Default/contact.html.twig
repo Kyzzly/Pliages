@@ -1,0 +1,83 @@
+{% extends "PliageBundle::layout.html.twig" %}
+
+{% block contenu %}    
+    
+    {% block css %}
+        <style>
+            #h1{
+                
+            }
+        </style>
+        
+    {% endblock %}
+    
+    <!-- pop up (prob de chemin <a href="{{ path('pliage_creationcontact') }}" onclick="window.open('creationcontact.html','Créer un contact','height=100','width=150','top=100','left=100','left=250','toolbar=no','location=no','menubar=yes','resizable=yes','scrollbars=no','status=no'); return false;">Créer un contact</a> -->
+    <a href="{{ path('pliage_creationcontact') }}"><h2>Créer un contact</h2> </a>
+
+<h2>Rechercher un contact</h2>
+    <table>
+        <tr> <!--En tête du tableau-->
+            <th>Nom de l'entreprise</th>
+            <th>Adresse</th>
+            <th>Code postal</th>
+            <th>Ville</th>
+            <th>Adresse mail entreprise</th>
+            <th>Interlocuteur</th>
+            <th>adresse mail interlocuteur</th>
+            <th>numéro téléphone</th>
+            <th>Portable</th>
+        </tr>
+        <tr> <!-- cellule de recherche par "noms"-->
+            <td>Nom de l'entreprise</td>
+            <td>Adresse</td>
+            <td>Code postal</td>
+            <td>Ville</td>
+            <td>Adresse mail entreprise</td>
+            <td>Interlocuteur</td>
+            <td>adresse mail interlocuteur</td>
+            <td>numéro téléphone</td>
+            <td>Portable</td>
+        </tr>
+        <tr> <!-- tous les contacts enregistrés (php?)-->
+            <td>Nom de l'entreprise</td>
+            <td>Adresse</td>
+            <td>Code postal</td>
+            <td>Ville</td>
+            <td>Adresse mail entreprise</td>
+            <td>Interlocuteur</td>
+            <td>adresse mail interlocuteur</td>
+            <td>numéro téléphone</td>
+            <td>Portable</td>
+        </tr>
+        <!-- afficher tous les contacts enregistrés -->
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+         
+{% endblock %}
+
+

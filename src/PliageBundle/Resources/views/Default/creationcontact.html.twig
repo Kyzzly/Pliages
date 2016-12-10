@@ -1,0 +1,49 @@
+{% extends "PliageBundle::layout.html.twig" %}
+
+{% block contenu %}
+    <style>
+        #info{
+                display: block;                
+            }            
+    </style>
+     
+    <form method='post' action='traitement.php'>
+        <fieldset>
+            <legend>Créer un nouveau contact</legend> <!--Titre du Fieldset-->
+                <label id='info' for='nomentreprise'>Nom de l'entreprise</label>
+                <input type='text' name='nomentreprise' id='nomentreprise'autofocus/> 
+
+                <label id='info' for='adresse'>Adresse</label>
+                <input type='text' name='adresse' id='adresse'/>
+                
+                <label id='info' for='codepostal'>Code postal</label>
+                <input type='text' name='codepostal' id='codepostal'/>
+                
+                <label id='info' for='ville'>Ville</label>
+                <input type='text' name='ville' id='ville'/>
+
+                <label id='info' for='adressemailentreprise'>Adresse mail entreprise</label>
+                <input type='text' name='adressemailentreprise' id='adressemailentreprise'/> 
+
+                <label id='info' for='interlocuteurprincipal'>Interlocuteur</label>
+                <input type='text' name='interlocuteurprincipal' id='interlocuteurprincipal'/> 
+
+                <label id='info' for='Adressemailprincipal'>Adresse mail interlocuteur</label>
+                <input type='text' name='Adressemailprincipal' id='Adressemailprincipal'/> 
+
+                <label id='info' for='numerotelephone'>Numéro téléphone</label>
+                <input type='tel' name='numerotelephone' id='numerotelephone'/> 
+
+                <label id='info' for='portable'>Portable</label>
+                <input type='tel' name='portable' id='portable'/>
+                
+                <input id='info' type='submit' value='Créer' />
+        </fieldset>
+        
+        
+        
+
+    </form>    
+{% endblock %}
+
+

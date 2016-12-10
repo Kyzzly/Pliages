@@ -1,0 +1,120 @@
+{% extends "PliageBundle::layout.html.twig" %}
+        
+
+
+{% block contenu %}
+    
+    
+    <div id="main" class="container-fluid">
+        <div class="row-fluid">
+            <div id="left" class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Images</h1>
+                        
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                          Faitage
+                                        </a>
+                                    </h4>
+                                </div>
+                              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    {% for i in 0..10 %}
+                                        <img src="{{ asset('bundles/pliage/images/faitage/faitieresimple50mm.jpeg') }}" />
+                                    {% endfor %}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                          Rive
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        {% for i in 0..2 %}
+                                            <img src="{{ asset('bundles/pliage/images/faitage/faitieresimple50mm.jpeg') }}" />
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Egouts  
+                                      </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        {% for i in 0..5 %}
+                                            <img src="{{ asset('bundles/pliage/images/faitage/faitieresimple50mm.jpeg') }}" />
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                </div>
+                          </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="right" class="col-lg-8">
+                <form>    
+                    <h2>Débit Pliages</h2>
+                        <h3>Faîtage</h3>
+                                <select>
+                                    <option>Pomme</option> 
+                                    <option>TOTO2</option> 
+                                    <option>TOTO3</option> 
+                                </select>            
+                        <h3>Rives</h3>
+                        <h3>Egouts</h3>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+
+{% endblock %}
+
+
+{% block css %}
+    <style>
+        #main{
+            margin-top: 30px;
+        }
+        #imgprofil{
+            display : block
+        }
+        #left{
+            background-color: red;
+            max-height: 600px;
+            overflow-y: scroll;
+            padding-top: 20px;
+        }
+        #left img{
+            cursor : pointer;            
+        }
+        #right{
+            padding-top: 20px;
+            background-color: green;
+        }
+        
+    </style>
+{% endblock %}
+

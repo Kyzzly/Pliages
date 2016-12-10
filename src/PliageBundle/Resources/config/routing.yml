@@ -1,0 +1,27 @@
+pliage_homepage:
+    path:     /
+    defaults: { _controller: PliageBundle:Default:index }
+    
+pliage_accueil:
+    path:     /home
+    defaults: { _controller: PliageBundle:Default:accueil }
+    
+pliage_contact:
+    path:     /contact
+    defaults: { _controller: PliageBundle:Default:contact }
+    
+pliage_creationcontact:
+    path:     /creationcontact
+    defaults: { _controller: PliageBundle:Default:creationcontact }    
+    
+pliage_debitpliage:
+    path:     /debitpliage
+    defaults: { _controller: PliageBundle:Default:debitpliage }
+    
+pliage_debitmateriaux:
+    path:     /debitmateriaux
+    defaults: { _controller: PliageBundle:Default:debitmateriaux }
+    
+pliage_debittole:
+    path:     /debittole
+    defaults: { _controller: PliageBundle:Default:debittole }

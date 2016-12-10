@@ -1,0 +1,27 @@
+{% extends "PliageBundle::layout.html.twig" %}
+
+{% block contenu %}
+    <h1>Hello World!</h1>
+
+    <a id="test" href="{{ path('pliage_contact') }}">Liste des contacts</a>
+
+{% endblock %}
+
+
+
+
+
+
+
+{% block css %}       
+    <style>
+        a#test{
+            color : blue
+        }
+        h1{
+            color : green;
+        }
+    </style>
+{% endblock %}
+
+

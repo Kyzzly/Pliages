@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Athos{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+        <style>
+            #menu{
+                list-style: none;                
+            }
+            #menu li{
+                display: inline;
+                padding: 20px 10px;
+            }
+            #menu a{
+                color : #0000F0;
+            }
+        </style>
+        {% block css %} {% endblock %}
+    </head>
+    <body>
+
+        {# MENU #}
+        <ul id="menu">
+            <li> <a href="{{ path('pliage_accueil') }}">Accueil</a></li>
+            <li> <a href="{{ path('pliage_contact') }}">Contacts</a></li>           
+            <li> <a href="{{ path('pliage_debitpliage') }}">Débit pliages</a></li>
+            <li> <a href="{{ path('pliage_debitmateriaux') }}">Débit matériaux</a></li>
+            <li> <a href="{{ path('pliage_debittole') }}">Débit tôles</a></li>
+            <li> <a href="{{ path('pliage_homepage') }}">Index</a></li>
+        </ul>
+        
+        
+        {% block contenu %} {% endblock %}
+    </body>
+    {% block javascripts %} 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% endblock %}    
+</html> 
