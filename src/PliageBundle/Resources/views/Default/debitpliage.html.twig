@@ -66,51 +66,59 @@
                     </div>
                 </div>
             </div>
-            <div id="right" class="col-lg-8 col-md-4 col-xs-12">
+            <div id="right" class="col-lg-offset-1 col-lg-7 col-md-4 col-xs-12">                
+                
                 <div class="row">
-                    <div id="extfeuille" class="col-xs-1 col-sm-1">
-                    </div>    
-                        <div id="intfeuille" class="col-xs-10 col-sm-10">
-                                logo Vendee étanchéité sur la gauche
-                                Zone de représentation maison sur la droite                        
-                            <div class="row">
-                                
-                                    <h1>
-                                        <p class="text-center">DEBIT PLIAGES</p>
-                                    </h1>                            
-                                
-                                <div id="rectangle" class="rectangle">
-                                </div>
-		
-                                
-                      <!-- <input type="date" name="nom" /> -->
-                            
-                                    <div class="col-xs-6 col-sm-6">                          
-                                            <h2><u> Emetteur :</u></h2>
-                                            <strong>VENDEE ETANCHEITE</strong>
-                                            <form><br />
-                                                <select> 
-                                                    <otpion>Thierry CHARRIER</option>
-                                                    <otpion>Gérard BOURON</option>
-                                                    <otpion>Guillaume PINEAU</option>
-                                                    <otpion>Maxime</option>
-                                                </select>
-                                            <form>
-                                            <br /> n° port. ou fixe entreprise ?
-                                    </div>    
-                                        <h2><u>Fournisseur :</u></h2>
-                                        <strong><input type="nom" name="nom client" placeholder="Nom de l'entreprise" /></strong>
-                                        <p>
-                                            <br />A l'attention de <input type="texte" name="prénom nom" placeholder="Nom Prénom"/>
-                                            <br />n° port. ou fixe entreprise ?
-                                        </p>
-                                    <h2><u>Référence chantier :</u></h2>
-                                    <input type="nom" name="nom client" placeholder="Nom du client" /> à <input type="texte" name="nom de chantier" placeholder="Commune" />
-                                    <h2><u>Délai de livraison à notre atelier :</u></h2> <input type="date" />
-                            </div>  
-                        </div>
-                    <div id="extfeuille" class="col-xs-1 col-sm-1">
+                    <div class="col-lg-12">
+                        logo Vendee étanchéité sur la gauche Zone de représentation maison sur la droite
                     </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">DEBIT PLIAGES</h1>
+                    </div>
+                </div>
+                                
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6  col-xs-6">
+                        <h2>Emetteur :</h2>
+                        <strong>VENDEE ETANCHEITE</strong>
+                        <form>
+                            <select> 
+                                <option>Thierry CHARRIER</option>
+                                <option>Gérard BOURON</option>
+                                <option>Guillaume PINEAU</option>
+                                <option>Maxime</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-sm-6  col-xs-6">
+                        <h2>Fournisseur :</h2>
+                        <strong><input type="nom" name="nom client" placeholder="Nom de l'entreprise" /></strong> <br/>
+                        A l'attention de <input type="texte" name="prénom nom" placeholder="Nom Prénom"/><br />
+                        n° port. ou fixe entreprise ?
+                    </div>
+                </div>
+                                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Référence chantier :</h2>
+                        <input type="nom" name="nom client" placeholder="Nom du client" /> à <input type="texte" name="nom de chantier" placeholder="Commune" />
+                    </div>    
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Date de livraison à notre atelier :</h2> <input type="date" />
+                    </div>    
+                </div>
+              </div>
+        </div>
+                                    
+        <div class="row">
+            <div class="col-lg-12">
+                <input id="btn-print" type="button" class="pull-right btn btn-primary" value="Imprimer" onclick="javascript:window.print();"/>
             </div>
         </div>
     </div>
@@ -144,19 +152,24 @@
         }
         
 {# Présentation feuille A4 #}
-        #rectangle{
-            width:400px;
-            height:200px;
-            background:#069;
-            }
             
         #right{
             padding-top: 20px;
-            background-color: ;
+            background-color: #ececec;
+        }  
+        
+        /* Style chargé uniquement lors de l'impression */
+        @media print { 
+            #left {
+                display: none;  
+            }
+            #menu {
+                display: none;
+            }
+            #btn-print {
+                display: none;
+            }
         }
-        #extfeuille{
-            background-color: #696969;
-        }    
     </style>
 {% endblock %}
 
