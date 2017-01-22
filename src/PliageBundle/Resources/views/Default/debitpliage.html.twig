@@ -4,10 +4,11 @@
 
 {% block contenu %}
     
+{#    http://getbootstrap.com/css/#grid-options #}
     
     <div id="main" class="container-fluid">
         <div class="row-fluid">
-            <div id="left" class="col-lg-4">
+            <div id="left" class="col-lg-4 col-md-6 col-xs-12">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Images</h1>
@@ -60,25 +61,56 @@
                                         {% endfor %}
                                     </div>
                                 </div>
-                                </div>
-                          </div>
-                        
-                        
+                            </div>                                    
+                        </div>                        
                     </div>
                 </div>
             </div>
-            <div id="right" class="col-lg-8">
-                <form>    
-                    <h2>Débit Pliages</h2>
-                        <h3>Faîtage</h3>
-                                <select>
-                                    <option>TOTO1</option> 
-                                    <option>TOTO2</option> 
-                                    <option>TOTO3</option> 
-                                </select>            
-                        <h3>Rives</h3>
-                        <h3>Egouts</h3>
-                </form>
+            <div id="right" class="col-lg-8 col-md-4 col-xs-12">
+                <div class="row">
+                    <div id="extfeuille" class="col-xs-1 col-sm-1">
+                    </div>    
+                        <div id="intfeuille" class="col-xs-10 col-sm-10">
+                                logo Vendee étanchéité sur la gauche
+                                Zone de représentation maison sur la droite                        
+                            <div class="row">
+                                
+                                    <h1>
+                                        <p class="text-center">DEBIT PLIAGES</p>
+                                    </h1>                            
+                                
+                                <div id="rectangle" class="rectangle">
+                                </div>
+		
+                                
+                      <!-- <input type="date" name="nom" /> -->
+                            
+                                    <div class="col-xs-6 col-sm-6">                          
+                                            <h2><u> Emetteur :</u></h2>
+                                            <strong>VENDEE ETANCHEITE</strong>
+                                            <form><br />
+                                                <select> 
+                                                    <otpion>Thierry CHARRIER</option>
+                                                    <otpion>Gérard BOURON</option>
+                                                    <otpion>Guillaume PINEAU</option>
+                                                    <otpion>Maxime</option>
+                                                </select>
+                                            <form>
+                                            <br /> n° port. ou fixe entreprise ?
+                                    </div>    
+                                        <h2><u>Fournisseur :</u></h2>
+                                        <strong><input type="nom" name="nom client" placeholder="Nom de l'entreprise" /></strong>
+                                        <p>
+                                            <br />A l'attention de <input type="texte" name="prénom nom" placeholder="Nom Prénom"/>
+                                            <br />n° port. ou fixe entreprise ?
+                                        </p>
+                                    <h2><u>Référence chantier :</u></h2>
+                                    <input type="nom" name="nom client" placeholder="Nom du client" /> à <input type="texte" name="nom de chantier" placeholder="Commune" />
+                                    <h2><u>Délai de livraison à notre atelier :</u></h2> <input type="date" />
+                            </div>  
+                        </div>
+                    <div id="extfeuille" class="col-xs-1 col-sm-1">
+                    </div>
             </div>
         </div>
     </div>
@@ -102,19 +134,29 @@
             display : block
         }
         #left{
-            background-color: red;
-            max-height: 600px;
+            background-color: blue;
+            max-height: 800px;
             overflow-y: scroll;
             padding-top: 20px;
         }
         #left img{
             cursor : pointer;            
         }
+        
+{# Présentation feuille A4 #}
+        #rectangle{
+            width:400px;
+            height:200px;
+            background:#069;
+            }
+            
         #right{
             padding-top: 20px;
-            background-color: green;
+            background-color: ;
         }
-        
+        #extfeuille{
+            background-color: #696969;
+        }    
     </style>
 {% endblock %}
 
