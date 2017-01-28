@@ -8,7 +8,7 @@
     
     <div id="main" class="container-fluid">
         <div class="row-fluid">
-            <div id="left" class="col-lg-4 col-md-6 col-xs-12">
+            <div id="left" class="col-lg-3 col-md-3 col-xs-3">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Images</h1>
@@ -75,38 +75,68 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-lg-5"> 
-                        <h2 id="zone-dessin">ZONE DE DESSIN</h2>
+                    <div class="col-lg-5 col-xs-5" id="zone-dessin"> 
+                        <h2>ZONE DE DESSIN</h2>
                     </div>
-                    <div class="col-lg-4">
-                        <h2 class="titre2">Référence :</h2><dr/>
-                        <h2 class="titre3">Adresse</h2>
-                    </div>
-                    <div class="col-lg-3">
-                        <h2 class="titre2">CH -</h2><dr/>
-                        <h2 class="titre3">Date :</h2>
+                    <div class="col-lg-7 col-xs-7" id="zone-renseignements">
+<!--
+                        <div class="row">
+                            <div class="col-lg-7 no-padding-right">
+                                <h2>Référence :</h2>
+                            </div>
+                            <div class="col-lg-5 no-padding-left">
+                                <h2 class="no-border-left">CH -</h2>
+                            </div>
+                            
+                            <div class="col-lg-7  no-padding-right">
+                                <h2>Adresse</h2>
+                            </div>
+                            <div class="col-lg-5 no-padding-left">
+                                <h2 class="no-border-left">Date :</h2>
+                            </div>
+                            
+                            <div class="col-lg-12">
+                                <h2>Prise des cotes par :</h2>
+                            </div>
+                            <div class="col-lg-12">
+                                <h2>Date de livraison :</h2>
+                            </div>
+                            <div class="col-lg-12">
+                                <h2>Fournisseur :</h2>
+                            </div>
+                        </div>
+-->
+                        <table class="table table-bordered">
+                            <tr class="ht-pte-ligne">
+                                <td>Référence :</td>
+                                <td>CH -</td>
+                            </tr>
+                            <tr id="ht-grd-ligne">
+                                <td>Adresse :</td>
+                                <td>Date -</td>
+                            </tr>
+                            <tr class="ht-pte-ligne">
+                                <td colspan="2">Prise des cotes par :</td>
+                            </tr>
+                            <tr class="ht-pte-ligne">
+                                <td colspan="2">Date de livraison :</td>
+                            </tr>
+                            <tr class="ht-pte-ligne">
+                                <td colspan="2">Fournisseur :</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                
-                <div class="row">    
-                    <div class="col-lg-5">
-                        <h2>pouet</h2>                        
-                    </div>
-                    <div class="col-lg-7">
-                        <h2 class="titre2">Prise des cotes par :</h2><dr/>
-                        <h2 class="titre2">Date de livraison :</h2><dr/>
-                        <h2 class="titre2">Fournisseur :</h2>
-                    </div>
-                </div>
-                
+                                
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 col-xs-12">
                         <h1 class="text-center">Pliage acier RAL :</h1>
                     </div>
                 </div>
                 
+<!--                
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-xs-6">
                         <h2>Emetteur :</h2>
                         <strong>VENDEE ETANCHEITE</strong>
                         <form>
@@ -118,7 +148,7 @@
                             </select>
                         </form>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-xs-6">
                         <h2>Fournisseur :</h2>
                         <strong><input type="nom" name="nom client" placeholder="Nom de l'entreprise" /></strong> <br/>
                         A l'attention de <input type="texte" name="prénom nom" placeholder="Nom Prénom"/><br />
@@ -127,14 +157,14 @@
                 </div>
                                 
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 col-xs-12">
                         <h2>Référence chantier :</h2>
                         <input type="nom" name="nom client" placeholder="Nom du client" /> à <input type="texte" name="nom de chantier" placeholder="Commune" />
                     </div>    
                 </div>
                 
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 col-xs-12">
                         <h2>Date de livraison à notre atelier :</h2> <input type="date" />
                     </div>    
                 </div>
@@ -144,13 +174,13 @@
         </div>
                                     
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-xs-12">
                 <input id="btn-print" type="button" class="pull-right btn btn-primary" value="Imprimer" onclick="javascript:window.print();"/>
             </div>
         </div>
     </div>
-    
-    
+                                
+-->      
     
     
     
@@ -165,70 +195,94 @@
         #main{
             margin-top: 30px;
         }
+        
         #imgprofil{
             display : block
         }
+        
         #left{
-            background-color: blue;
+            background-color: white;
             max-height: 800px;
             overflow-y: scroll;
             padding-top: 20px;
         }
+        
         #left img{
             cursor : pointer;            
+        }
+        
+        .container-fluid{
+            Background :#696969;
         }
         
 {# Présentation feuille A4 #}
             
         #right{
             padding-top: 20px;
-            background-color: #ececec;        
+            background-color: white;        
         }
         
-        #zone-dessin{
-            margin-top: -2px;
+        #zone-dessin {
+            height: 198px;
+            margin-top: 0px  0px 0px 0px;
             border-width: 2px;
             border-color: black;
             border-style: solid;
+            padding: 0 0 0px 0px;
         }
         
-        .titre2{
+        #ht-grd-ligne {
+            height: 65px;
+        }
+        
+        .ht-pte-ligne{
+            height: 35px;
+        }
+        
+        .text-center {            
+            border: solid 2px black;
+            
+        }
+        
+        #zone-renseignements .table.table-bordered,
+        #zone-renseignements .table.table-bordered td {
+            border-width: 2px;
+            border-color: black;
+        }
+        /*
+        #zone-renseignements h2 {
             color: black;
             font-size: 15px;
             text-decoration: underline;
-            margin-top: -2px;
-            margin-left: 0px;
-            margin-right: 0px;
-            margin-bottom: 0;
+            margin: 0;
             line-height: 35px;
-            border-width: 2px;
-            border-color: black;
-            border-style: solid;
+            border: solid 2px black;
+            border-bottom: none;
+            padding: 0 0 10px 10px;
         }
         
-        .titre3{
-            color: black;
-            font-size: 15px;
-            text-decoration: underline;            
-            margin-top: -2px;
-            margin-left: 0px;
-            margin-right: 0px;
-            margin-bottom: 0px;
-            line-height: 45px;
-            border-width: 2px;
-            border-color: black;
-            border-style: solid;
-            
+        #zone-renseignements .row div:last-child h2 {
+            border-bottom: solid 2px black;
+        }
+        
+        .no-padding-right {
+            padding-right: 0 !important;
+        }
+        .no-padding-left {
+            padding-left: 0 !important;
+        }
+        .no-border-left {
+            border-left: none !important;
+        }
+        */
+        
         /* Style chargé uniquement lors de l'impression */
         @media print { 
-            #left {
-                display: none;  
-            }
-            #menu {
-                display: none;
-            }
-            #btn-print {
-                display: none;
+            #left,
+            #menu,
+            #btn-print,
+            .sf-toolbar {
+                display: none !important;  
             }
         }
     </style>
