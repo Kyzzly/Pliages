@@ -7,11 +7,12 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
+    app.path.pliage_images: /uploads/images/pliages
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -65,3 +66,36 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+easy_admin:
+    design:
+        menu:
+            - { label: 'Gestion des données' }
+            - Pliage
+            - Categorie
+            - { label: 'Retour au site' }
+            - { label: 'Accueil', route: 'pliage_homepage' }
+            
+    entities:
+        Pliage:
+            class: PliageBundle\Entity\Pliage
+            form:
+                fields:                    
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - categorie
+                    - actif
+            list:
+                fields:
+                    - actif
+                    - { property: 'image', type: 'image', base_path: %app.path.pliage_images% }
+                    - categorie
+        Categorie:
+            class: PliageBundle\Entity\Categorie            
+        
+        
+vich_uploader:
+    db_driver: orm
+    mappings:
+        pliage_images:
+            uri_prefix:         %app.path.pliage_images%
+            upload_destination: %kernel.root_dir%/../web/uploads/images/pliages

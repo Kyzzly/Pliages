@@ -11,10 +11,36 @@
             <div id="left" class="col-lg-3 col-md-3 col-xs-3">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Images</h1>
+                        <h1>Images</h1>                                                                        
                         
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default">
+                            
+                            {% for categorie in pliages %}                                
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapseOne">
+                                              {{ categorie|first.categorie.nom }}
+                                            </a>
+                                        </h4>
+                                    </div>                                    
+                                    <div id="collapse{{ loop.index }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            {% for pliage in categorie %}
+                                                <img style="height: 100px;" src="{{ asset( 'uploads/images/pliages/' ~ pliage.image) }}" />
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            
+                            
+                            
+                                
+                                
+                                
+                            {#<div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -61,7 +87,7 @@
                                         {% endfor %}
                                     </div>
                                 </div>
-                            </div>                                    
+                            </div>  #}                                  
                         </div>                        
                     </div>
                 </div>

@@ -34,7 +34,28 @@ class DefaultController extends Controller
     
     public function debitpliageAction()
     {
-        return $this->render('PliageBundle:Default:debitpliage.html.twig');
+        //Récupération de la base de données
+        $em = $this->getDoctrine()->getManager();
+        $pliageRepository = $em->getRepository('PliageBundle:Pliage');
+        
+        $pliages = $pliageRepository->findBy(array(
+            'actif' => true,
+        ),array(
+            'categorie' => 'ASC',
+        ));
+        
+        $tab = array();
+        $idCategorie = null;
+        foreach($pliages as $pliage){
+            if($idCategorie == null || $idCategorie != $pliage->getCategorie()->getId() ){
+                $idCategorie = $pliage->getCategorie()->getId();
+            }
+            $tab[$idCategorie][] = $pliage;
+        }
+        
+        return $this->render('PliageBundle:Default:debitpliage.html.twig',array(
+            'pliages' => $tab,
+        ));
     }
     
     public function debitmateriauxAction()
