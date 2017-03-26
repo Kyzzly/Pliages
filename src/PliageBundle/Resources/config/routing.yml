@@ -8,20 +8,13 @@ pliage_accueil:
     
 pliage_contact:
     path:     /contact
-    defaults: { _controller: PliageBundle:Default:contact }
+    defaults: { _controller: PliageBundle:Contact:index }
     
 pliage_creationcontact:
     path:     /creationcontact
-    defaults: { _controller: PliageBundle:Default:creationcontact }    
+    defaults: { _controller: PliageBundle:Contact:add }    
     
 pliage_debitpliage:
     path:     /debitpliage
-    defaults: { _controller: PliageBundle:Default:debitpliage }
+    defaults: { _controller: PliageBundle:Pliage:debit }
     
-pliage_debitmateriaux:
-    path:     /debitmateriaux
-    defaults: { _controller: PliageBundle:Default:debitmateriaux }
-    
-pliage_debittole:
-    path:     /debittole
-    defaults: { _controller: PliageBundle:Default:debittole }

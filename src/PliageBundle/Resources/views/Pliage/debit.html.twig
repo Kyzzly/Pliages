@@ -1,0 +1,257 @@
+{% extends "PliageBundle::layout.html.twig" %}
+        
+{% block contenu %}
+    
+{#    http://getbootstrap.com/css/#grid-options #}
+    
+    <div id="main" class="container-fluid">
+        <div class="row-fluid">
+            <div id="left" class="col-lg-3 col-md-3 col-xs-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Images</h1>                                                                        
+                        
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            
+                            {% for categorie in pliages %}                                
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapseOne">
+                                              {{ categorie|first.categorie.nom }}
+                                            </a>
+                                        </h4>
+                                    </div>                                    
+                                    <div id="collapse{{ loop.index }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            {% for pliage in categorie %}
+                                                <img style="height: 100px;" src="{{ asset( 'uploads/images/pliages/' ~ pliage.image) }}" />
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}                                
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            
+            <div id="right" class="col-lg-offset-1 col-lg-7 col-md-4 col-xs-12">                
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img id="logo" src="{{ asset('bundles/pliage/images/logo.jpg') }}" class="img-responsive" />
+                    </div>
+                    <div class="col-lg-8">
+                        <div id="zoneDessin"></div>
+                    </div>
+                </div>
+                <div  class="row">
+                    <div id="titre" class="col-lg-12">
+                        <h1>Télécopie</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="emetteur" class="col-lg-4" >
+                        <table class="table">
+                            <tr>
+                                <th rowspan="4">Emetteur</th>
+                                <td>Vendée etancheite</td>
+                            </tr>
+                            <tr>
+                                <td>Thierry CHARRIER</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Tel : 06 77 91 95 39</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Fax : 06 77 91 95 39</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div id="detail" class="col-lg-4">
+                        <ul>
+                            <li><span class="sub-title">Date le :</span> 29/09/2016</li>
+                            <li><span class="sub-title">Nb de page :</span> 1/2</li>
+                            <li><span class="sub-title">Référence :</span> POTIER Gorges </li>
+                            <li><span class="sub-title">Délai :</span> Pour Vendredi 7/10/2016</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="destinataire" class="col-lg-4 " >
+                        <table class="table">
+                            <tr>
+                                <th rowspan="4">Destinataire</th>
+                                <td>Vendée etancheite</td>
+                            </tr>
+                            <tr>
+                                <td>Thierry CHARRIER</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Tel : 06 77 91 95 39</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Fax : 06 77 91 95 39</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                                
+                <div class="row">
+                    <div class="col-lg-12 col-xs-12">
+                        <h1 class="text-center">Pliage acier RAL :</h1>
+                    </div>
+                </div>
+
+    
+    
+    
+    
+
+{% endblock %}
+
+
+{% block css %}
+    {{ parent() }}
+    
+    <style>
+        #main{
+            background-color: #ccc;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        
+        #right{
+            background-color: white;
+            min-height: 1200px;
+        }
+        #right #zoneDessin{
+            border: 2px solid #ccc;
+            padding: 90px;
+            margin-top: 14px;
+        }
+        #right #titre h1{
+            border: 2px solid #ccc;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 5px;
+            font-size: 24px;
+        }
+        
+        #right #emetteur table,#right #destinataire table{
+            border : 2px solid #ccc;
+        }
+        #right #emetteur table th,#right #destinataire table th{
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+        #right #emetteur table td,#right #destinataire table td{
+            border-right : 2px solid #ddd
+        }
+        
+        #right #detail ul{
+            list-style: none;
+            padding-left: 0px;
+            margin-top: 30px;
+        }
+        #right #detail ul .sub-title{
+            font-weight: bold;
+        }
+        
+        {##main{
+            margin-top: 30px;
+        }
+        
+        #imgprofil{
+            display : block
+        }
+        
+        #left{
+            background-color: white;
+            max-height: 800px;
+            overflow-y: scroll;
+            padding-top: 20px;
+        }
+        
+        #left img{
+            cursor : pointer;            
+        }
+        
+        .container-fluid{
+            Background :#696969;
+        }#}
+        
+{# Présentation feuille A4 #}
+     {#       
+        #right{
+            padding-top: 20px;
+            background-color: white;        
+        }
+        
+        #zone-dessin {
+            height: 198px;
+            margin-top: 0px  0px 0px 0px;
+            border-width: 2px;
+            border-color: black;
+            border-style: solid;
+            padding: 0 0 0px 0px;
+        }
+        
+        #ht-grd-ligne {
+            height: 65px;
+        }
+        
+        .ht-pte-ligne{
+            height: 35px;
+        }
+        
+        .text-center {            
+            border: solid 2px black;
+            
+        }
+        
+        #zone-renseignements .table.table-bordered,
+        #zone-renseignements .table.table-bordered td {
+            border-width: 2px;
+            border-color: black;
+        }#}
+        /*
+        #zone-renseignements h2 {
+            color: black;
+            font-size: 15px;
+            text-decoration: underline;
+            margin: 0;
+            line-height: 35px;
+            border: solid 2px black;
+            border-bottom: none;
+            padding: 0 0 10px 10px;
+        }
+        
+        #zone-renseignements .row div:last-child h2 {
+            border-bottom: solid 2px black;
+        }
+        
+        .no-padding-right {
+            padding-right: 0 !important;
+        }
+        .no-padding-left {
+            padding-left: 0 !important;
+        }
+        .no-border-left {
+            border-left: none !important;
+        }
+        */
+        
+        /* Style chargé uniquement lors de l'impression */
+      {#  @media print { 
+            #left,
+            #menu,
+            #btn-print,
+            .sf-toolbar {
+                display: none !important;  
+            }
+        }#}
+    </style>
+{% endblock %}
+

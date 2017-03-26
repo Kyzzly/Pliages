@@ -4,24 +4,10 @@ namespace PliageBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class PliageController extends Controller
 {
-    public function indexAction()
-    {
-        return $this->render('PliageBundle:Default:index.html.twig');
-    }
-    public function contactAction()
-    {
-        
-        
-        $nom='Athos';
-        
-        return $this->render('PliageBundle:Default:contact.html.twig',array(
-            'chat' => $nom
-        ));
-    }
-    
-    public function debitpliageAction()
+
+    public function debitAction()
     {
         //Récupération de la base de données
         $em = $this->getDoctrine()->getManager();
@@ -42,7 +28,7 @@ class DefaultController extends Controller
             $tab[$idCategorie][] = $pliage;
         }
         
-        return $this->render('PliageBundle:Default:debitpliage.html.twig',array(
+        return $this->render('PliageBundle:Pliage:debit.html.twig',array(
             'pliages' => $tab,
         ));
     }
